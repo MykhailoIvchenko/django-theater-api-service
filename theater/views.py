@@ -46,3 +46,14 @@ class ActorViewSet(
     queryset = Actor.objects.all()
     serializer_class = ActorSerializer
     permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
+
+
+class TheaterHallViewSet(
+    mixins.CreateModelMixin,
+    mixins.ListModelMixin,
+    GenericViewSet,
+):
+    queryset = TheaterHall.objects.all()
+    serializer_class = TheaterHallSerializer
+    permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
+
