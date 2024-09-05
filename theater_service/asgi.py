@@ -1,5 +1,5 @@
 """
-ASGI config for django-theater-theater-service project.
+ASGI config for django-theater-service project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
