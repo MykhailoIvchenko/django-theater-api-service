@@ -69,3 +69,32 @@ class PlayDetailSerializer(PlaySerializer):
             "genres",
             "actors",
         )
+
+
+class PerformanceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Performance
+        fields = ("id", "show_time", "play", "theater_hall")
+
+
+class PerformanceSerializerListSerializer(PerformanceSerializer):
+    play_title = serializers.CharField(source="play.title", read_only=True)
+    theater_hall_name = serializers.CharField(
+        source="theater_hall.name", read_only=True
+    )
+    theater_hall_capacity = serializers.IntegerField(
+        source="theater_hall.capacity", read_only=True
+    )
+    tickets_available = serializers.IntegerField(read_only=True)
+
+    class Meta:
+        model = Performance
+        fields = (
+            "id",
+            "show_time",
+            "play_title",
+            "theater_hall_name",
+            "theater_hall_capacity",
+            "tickets_available",
+        )
+
