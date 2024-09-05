@@ -39,7 +39,7 @@ class Play(models.Model):
         return self.title
 
 
-class TheatreHall(models.Model):
+class TheaterHall(models.Model):
     name = models.CharField(max_length=255)
     rows = models.IntegerField()
     seats_in_row = models.IntegerField()
@@ -55,7 +55,7 @@ class TheatreHall(models.Model):
 class Performance(models.Model):
     show_time = models.DateTimeField()
     play = models.ForeignKey(Play, on_delete=models.CASCADE)
-    theater_hall = models.ForeignKey(TheatreHall, on_delete=models.CASCADE)
+    theater_hall = models.ForeignKey(TheaterHall, on_delete=models.CASCADE)
 
     class Meta:
         ordering = ["-show_time"]
