@@ -1,5 +1,5 @@
 """
-ASGI config for django-theater-api-service project.
+ASGI config for django-theater-service project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django-theater-api-service.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'theater_service.settings')
 
 application = get_asgi_application()
